@@ -1,0 +1,17 @@
+server:
+  port: 0
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka,http://localhost:8762/eureka
+spring:
+  datasource:
+    hikari:
+      auto-commit: true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/art
+    username: root
+    password: A//4321abcd
